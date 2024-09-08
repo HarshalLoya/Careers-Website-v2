@@ -5,4 +5,4 @@
     height: 360px;
   }
 </style>
-<img class="img-fluid" id="banner" src="static/banner.jpg" alt="Image of a wooden staircase">
+<img class="img-fluid" id="banner" src="{{ url_for('static', filename='banner.jpg') }}" alt="Image of a wooden staircase">
