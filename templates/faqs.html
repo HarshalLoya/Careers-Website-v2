@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,9 @@
             position: relative;
             overflow-x: hidden;
         }
-        body:before, body:after {
+
+        body:before,
+        body:after {
             content: '';
             position: absolute;
             top: 0;
@@ -25,13 +28,16 @@
             background-size: cover;
             z-index: -1;
         }
+
         body:before {
             left: 0;
         }
+
         body:after {
             right: 0;
             transform: scaleX(-1);
         }
+
         .faq-section {
             padding: 50px 0;
             max-width: 900px;
@@ -39,6 +45,7 @@
             position: relative;
             z-index: 1;
         }
+
         .faq-item {
             background-color: #fff;
             padding: 20px;
@@ -47,42 +54,53 @@
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .faq-question {
             font-weight: bold;
             color: #007bff;
             margin-bottom: 10px;
         }
+
         .faq-answer {
             margin-bottom: 0;
         }
     </style>
 </head>
+
 <body>
     <div class="container faq-section">
         <h1 class="text-center mb-5">Frequently Asked Questions (FAQs)</h1>
         <div class="faq-item">
             <p class="faq-question">1. What is the purpose of this website?</p>
-            <p class="faq-answer">This website is a digital playground where my creative projects run wild. Think of it as my personal corner of the internet where curiosity meets technology, and they have a great time together.</p>
+            <p class="faq-answer">This website is a digital playground where my creative projects run wild. Think of it
+                as my personal corner of the internet where curiosity meets technology, and they have a great time
+                together.</p>
         </div>
         <div class="faq-item">
             <p class="faq-question">2. How can I contact you for collaboration or inquiries?</p>
-            <p class="faq-answer">You can contact me by sending a message through the "Contact" form on this website. If that fails, try a message in a bottle, though the response time may vary.</p>
+            <p class="faq-answer">You can contact me by sending a message through the "Contact" form on this website. If
+                that fails, try a message in a bottle, though the response time may vary.</p>
         </div>
         <div class="faq-item">
             <p class="faq-question">3. What technologies do you specialize in?</p>
-            <p class="faq-answer">I specialize in making computers do things they probably don’t want to, like analyzing data, creating visual reports, and detecting oil spills from outer space. I’m basically a digital cat herder.</p>
+            <p class="faq-answer">I specialize in making computers do things they probably don’t want to, like analyzing
+                data, creating visual reports, and detecting oil spills from outer space. I’m basically a digital cat
+                herder.</p>
         </div>
         <div class="faq-item">
             <p class="faq-question">4. Are your projects open source?</p>
-            <p class="faq-answer">Yes! My projects are as open as a coffee shop at 8 AM. You can find them on GitHub, where they're hanging out, waiting for someone to buy them a metaphorical latte.</p>
+            <p class="faq-answer">Yes! My projects are as open as a coffee shop at 8 AM. You can find them on GitHub,
+                where they're hanging out, waiting for someone to buy them a metaphorical latte.</p>
         </div>
         <div class="faq-item">
             <p class="faq-question">6. Can I find a unicorn on this website?</p>
-            <p class="faq-answer">Only if you believe hard enough. But seriously, if you find one, let me know—I've been looking for it for ages. I suspect it's hiding somewhere in the code.</p>
+            <p class="faq-answer">Only if you believe hard enough. But seriously, if you find one, let me know—I've been
+                looking for it for ages. I suspect it's hiding somewhere in the code.</p>
         </div>
         <div class="faq-item">
             <p class="faq-question">7. If I hit a bug, what should I do?</p>
-            <p class="faq-answer">Firstly, don’t panic. Offer it some coffee; bugs love coffee. If that doesn’t work, report it through the contact form, and I’ll come to the rescue with my digital flyswatter.</p>
+            <p class="faq-answer">Firstly, don’t panic. Offer it some coffee; bugs love coffee. If that doesn’t work,
+                report it through the contact form, and I’ll come to the rescue with my digital flyswatter.</p>
         </div>
     </div>
 
@@ -91,4 +109,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
