@@ -1,5 +1,6 @@
 import pymysql
 import os
+from werkzeug.security import generate_password_hash, check_password_hash
 
 timeout = 10
 
@@ -17,6 +18,36 @@ def get_db_connection():
       user=os.environ['DB_CONN_USER'],
       write_timeout=timeout,
   )
+
+
+def add_user_to_db(username, email, password):
+  connection = None
+  try:
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+      password_hash = generate_password_hash(password)
+      cursor.execute(
+          """
+          INSERT INTO users (username, email, password) 
+          VALUES (%s, %s, %s)
+          """, (username, email, password_hash))
+    connection.commit()
+  finally:
+    if connection:
+      connection.close
+
+
+def get_user_by_email(email):
+  connection = None
+  try:
+    connection = get_db_connection()
+    with connection.cursor() as cursor:
+      cursor.execute("SELECT * FROM users WHERE email = %s", (email, ))
+      user = cursor.fetchone()
+    return user
+  finally:
+    if connection:
+      connection.close()
 
 
 def load_jobs_from_db():
