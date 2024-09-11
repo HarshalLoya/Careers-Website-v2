@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include 'bootstrap.html' %}
+  <title>Application Submitted</title>
+  <style>
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    h4:hover {
+      color: #007bff;
+      transition: color 0.3s;
+    }
+
+    .confirmation-box {
+      padding: 20px;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      border-radius: 5px;
+    }
+
+    .confirmation-box h4 {
+      margin-top: 0;
+    }
+
+    .success-icon {
+      font-size: 40px;
+      color: #28a745;
+      animation: bounce 2s ease infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .details-section {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .back-home-btn {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  {% include 'nav.html' %}
+
+  <div class="container fade-in mt-5 text-center">
+    <div class="confirmation-box text-center">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h4 class="text-success mt-3">Application Submitted Successfully!</h4>
+      <p>Thank you for submitting your application for <b>"{{job['title']}}"</b>. Below are your details:</p>
+    </div>
+
+    <div class="details-section">
+      <h4>Full Name</h4>
+      <div>{{application['full_name']}}</div>
+
+      <h4>Email</h4>
+      <div>{{application['email']}}</div>
+
+      <h4>LinkedIn URL</h4>
+      <div>{{application['linkedin_url']}}</div>
+
+      <h4>Education</h4>
+      <div>{{application['education']}}</div>
+
+      <h4>Work Experience</h4>
+      <div>{{application['work_experience']}}</div>
+
+      <h4>Resume URL</h4>
+      <div>{{application['resume_url']}}</div>
+    </div>
+
+    <div class="back-home-btn">
+      <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
