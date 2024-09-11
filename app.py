@@ -44,9 +44,9 @@ def login():
       session['username'] = user['username']
       flash('Login successful!')
       return redirect(url_for('hello_world'))
-
-    flash('Invalid email or password.')
-    return redirect(url_for('login'))
+    else:
+      flash('Invalid email or password.')
+      return redirect(url_for('login'))
 
   return render_template('login.html')
 

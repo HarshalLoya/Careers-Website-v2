@@ -1,6 +1,6 @@
 import pymysql
 import os
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
 
 timeout = 10
 
@@ -28,13 +28,13 @@ def add_user_to_db(username, email, password):
       password_hash = generate_password_hash(password)
       cursor.execute(
           """
-          INSERT INTO users (username, email, password) 
-          VALUES (%s, %s, %s)
-          """, (username, email, password_hash))
+                INSERT INTO users (username, email, password_hash)
+                VALUES (%s, %s, %s)
+            """, (username, email, password_hash))
     connection.commit()
   finally:
     if connection:
-      connection.close
+      connection.close()
 
 
 def get_user_by_email(email):
@@ -85,7 +85,7 @@ def add_application_to_db(job_id, data):
           """
                 INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience, resume_url)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)
-                """,
+            """,
           (job_id, data['full_name'], data['email'], data['linkedin_url'],
            data['education'], data['work_experience'], data['resume_url']))
     connection.commit()
